@@ -1,4 +1,4 @@
-FROM php:8.1-apache
+FROM php:8.1-apache@sha256:0f247610452acd3ea920a4cc57954957ba5356ab6fe0cfe0c1bd386559e898bf
 
 ARG env
 RUN test -n "$env"
