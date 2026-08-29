@@ -7,7 +7,7 @@ volumes:
 
 services:
     db:
-        image: postgres:12.8-alpine
+        image: postgres:12.8-alpine@sha256:6f03854b0a6223f3b5efb98fe8a4d08af758d0625a6134dcae12c0a651f9e526
         volumes:
             - ./local_data:/var/lib/postgresql/
         ports:
@@ -15,7 +15,7 @@ services:
         env_file:
             - .env.postgres.local
     redis:
-        image: redis:6.2
+        image: redis:6.2@sha256:143f7bfc2358911d6b36138eabfbfffea46273c5d4b5696d90e5cbf23d633cf8
     cron:
         build:
             context: .
@@ -45,6 +45,6 @@ services:
             - db
             - redis
     adminer:
-        image: adminer
+        image: adminer@sha256:e82c16620650d359b87284b598d9ae03e5d95f3412f45d1ef3936b803445f1ae
         ports:
             - "30101:8080"
